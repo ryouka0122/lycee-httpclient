@@ -54,9 +54,6 @@ public abstract class TinyHttpClient {
 
 	abstract protected void processBeforeConnect(HttpURLConnection connection);
 
-	abstract protected void processAfterConnect(HttpURLConnection connection);
-
-
 	protected HttpResponse _call0(final HttpMethod method)
 			throws IOException
 	{
@@ -70,7 +67,6 @@ public abstract class TinyHttpClient {
 
 		try {
 			conn.connect();
-			processAfterConnect(conn);
 
 			final HttpResponse response = new HttpResponse();
 			response.setHeaders(conn.getHeaderFields());

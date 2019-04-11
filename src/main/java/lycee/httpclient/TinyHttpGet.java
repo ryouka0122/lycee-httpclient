@@ -11,13 +11,6 @@ public class TinyHttpGet extends TinyHttpClient {
 	@Override
 	protected void processBeforeConnect(final HttpURLConnection connection) {
 		// TODO Auto-generated method stub
-
 	}
-
-	@Override
-	protected void processAfterConnect(final HttpURLConnection connection) {
-		// NOP
-	}
-
 
 }

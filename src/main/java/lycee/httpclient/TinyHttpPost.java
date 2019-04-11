@@ -12,18 +12,13 @@ public class TinyHttpPost extends TinyHttpClient {
 
 	@Override
 	protected void processBeforeConnect(final HttpURLConnection connection) {
-		// NOP
-	}
 
-	@Override
-	protected void processAfterConnect(final HttpURLConnection connection) {
-
+		connection.setDoOutput(true);
 		try (OutputStream os = connection.getOutputStream()) {
 			os.write(getEncodedQuery().getBytes());
 		} catch (final IOException e) {
 			throw new RuntimeException(e);
 		}
-
 	}
 
 }
